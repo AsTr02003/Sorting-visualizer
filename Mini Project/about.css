@@ -1,0 +1,52 @@
+/*achievments */
+.about_achievments {
+    margin-top: 3rem;
+}
+.about_achievments-container{
+    display: grid;
+    grid-template: 40% 60%;
+    gap: 5rem;
+}
+
+.about_achievments-right{
+    margin: 1.6rem 0 2.5rem;
+}
+
+.achievments_card{
+    background-color:rgb(114, 114, 243);
+    padding: 1.6rem;
+    margin: 15px;
+    border-radius: 1rem;
+    text-align: center;
+
+}
+
+.achievments_card:hover{
+    /* background-color: rgb(196, 155, 235); */
+    box-shadow: 0 3rem 3rem rgba( 0 0 0 0.3);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+
+}
+.achievments_icon{
+    background-color: rgb(232, 195, 236);
+    padding: 0.6rem;
+    border-radius: 1rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+
+}
+
+.achievments_card:nth-child(2).achievments_icon{
+    background-color: rgb(0, 255, 106);
+}
+
+.achievments_card:nth-child(3).achievments_icon{
+    background-color: rgb(107, 0, 128);
+}
+
+.achievments_card p{
+    margin-top: 1rem;
+    
+}

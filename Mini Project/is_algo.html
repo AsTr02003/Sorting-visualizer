@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insertion Sort Algorithm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #424890;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #6c63ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        pre {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Insertion Sort Algorithm</h1>
+</header>
+
+<div id="container">
+    <h2>Algorithm</h2>
+    <pre id="algorithm">
+        function insertionSort(arr) {
+            for (let i = 1; i < arr.length; i++) {
+                let key = arr[i];
+                let j = i - 1;
+                while (j >= 0 && arr[j] > key) {
+                    arr[j + 1] = arr[j];
+                    j = j - 1;
+                }
+                arr[j + 1] = key;
+            }
+        }
+
+        
+    </pre>
+
+    <h2>Information</h2>
+    <p>Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.</p>
+
+    <h2>Explanation</h2>
+    <p>The Insertion Sort algorithm works by dividing the input array into two parts: the left part, which is initially sorted, and the right part, which is unsorted. The algorithm iterates through the unsorted part, taking one element at a time and placing it in its correct position within the sorted part. It repeats this process until the entire array is sorted.</p>
+</div>
+
+</body>
+</html>

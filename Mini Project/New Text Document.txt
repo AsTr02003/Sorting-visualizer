@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bubble Sort Algorithm</title>
+    <style>
+        pre {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bubble Sort Algorithm</h1>
+
+<pre id="algorithm">
+    function bubbleSort(arr) {
+        let n = arr.length;
+        let swapped;
+        do {
+            swapped = false;
+            for (let i = 0; i < n - 1; i++) {
+                if (arr[i] > arr[i + 1]) {
+                    let temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+        } while (swapped);
+    }
+
+    let arrayToSort = [64, 34, 25, 12, 22, 11, 90];
+    bubbleSort(arrayToSort);
+</pre>
+
+</body>
+</html>

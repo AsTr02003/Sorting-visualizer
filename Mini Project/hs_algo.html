@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heap Sort Algorithm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #424890;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #6c63ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        pre {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Heap Sort Algorithm</h1>
+</header>
+
+<div id="container">
+    <h2>Algorithm</h2>
+    <pre id="algorithm">
+        function heapify(arr, n, i) {
+            let largest = i;
+            let left = 2 * i + 1;
+            let right = 2 * i + 2;
+
+            if (left < n && arr[left] > arr[largest]) {
+                largest = left;
+            }
+
+            if (right < n && arr[right] > arr[largest]) {
+                largest = right;
+            }
+
+            if (largest !== i) {
+                let temp = arr[i];
+                arr[i] = arr[largest];
+                arr[largest] = temp;
+                heapify(arr, n, largest);
+            }
+        }
+
+        function heapSort(arr) {
+            let n = arr.length;
+
+            for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+                heapify(arr, n, i);
+            }
+
+            for (let i = n - 1; i > 0; i--) {
+                let temp = arr[0];
+                arr[0] = arr[i];
+                arr[i] = temp;
+                heapify(arr, i, 0);
+            }
+        }
+
+        
+    </pre>
+
+    <h2>Information</h2>
+    <p>Heap Sort is a comparison-based sorting algorithm that uses a binary heap data structure to build a partially sorted binary tree. It repeatedly removes the maximum element from the root of the heap and rebuilds the heap until the array is sorted.</p>
+
+    <h2>Explanation</h2>
+    <p>The Heap Sort algorithm is based on the concept of a binary heap. It first creates a max heap (a complete binary tree where the parent node is greater than or equal to its children) from the input array. Then, it repeatedly swaps the root node (maximum element) with the last element in the heap and reduces the size of the heap. This process continues until the entire array is sorted.</p>
+</div>
+
+</body>
+</html>

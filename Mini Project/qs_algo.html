@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Sort Algorithm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #424890;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #6c63ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        pre {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Quick Sort Algorithm</h1>
+</header>
+
+<div id="container">
+    <h2>Algorithm</h2>
+    <pre id="algorithm">
+        function quickSort(arr, low, high) {
+            if (low < high) {
+                let pi = partition(arr, low, high);
+
+                quickSort(arr, low, pi - 1);
+                quickSort(arr, pi + 1, high);
+            }
+        }
+
+        function partition(arr, low, high) {
+            let pivot = arr[high];
+            let i = low - 1;
+
+            for (let j = low; j < high; j++) {
+                if (arr[j] <= pivot) {
+                    i++;
+                    let temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+            let temp = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp;
+
+            return i + 1;
+        }
+
+    </pre>
+    <h2>Information</h2>
+    <p>Quick Sort is a highly efficient, in-place sorting algorithm that divides an array into smaller sub-arrays, then recursively sorts those sub-arrays. It is one of the most commonly used sorting algorithms in computer science.</p>
+
+    <h2>Explanation</h2>
+    <p>The Quick Sort algorithm works by selecting a pivot element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively, and the pivot element is placed in its correct position. This process continues until the entire array is sorted.</p>
+</div>
+</div>
+
+</body>
+</html>
